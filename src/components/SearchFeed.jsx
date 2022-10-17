@@ -8,10 +8,16 @@ import { Videos } from "./";
 const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true);
+
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`)
-      .then((data) => setVideos(data.items))
+      .then((data) => {
+        setVideos(data.items)
+        setLoading(false);
+      });
   }, [searchTerm]);
 
   return (
@@ -21,7 +27,7 @@ const SearchFeed = () => {
       </Typography>
       <Box display="flex">
         <Box sx={{ mr: { sm: '100px' } }}/>
-        {<Videos videos={videos} />}
+        <Videos videos={videos} loading={loading} />
       </Box>
     </Box>
   );
