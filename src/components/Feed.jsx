@@ -28,8 +28,8 @@ const Feed = () => {
           setSelectedCategory={setSelectedCategory} 
         />
         
-        <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: "#fff", }}>
-          Copyright © 2022 JSM Media
+        <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: "#fff", textAlign: "center" }}>
+          Copyright © 2022 YouPlay
         </Typography>
       </Box>
 
