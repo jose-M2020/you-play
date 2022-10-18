@@ -10,6 +10,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
         overflowY: "auto",
         height: { sx: "auto", md: "95%" },
         flexDirection: { md: "column" },
+        px: { sx: 0, md: 2 }
       }}
     >
       {categories.map((category) => (
